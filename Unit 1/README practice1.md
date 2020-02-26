@@ -1,0 +1,2 @@
+#First of all, we generate a sequence of data, this data goin to -20 to 20 in sequence of 1 by 1;
+#then we use these data sequence and we put into a variable named it "Y" and we assign a function, name it "dnorm" to generate shape of gauss bell, after these we plot these range, after these we declare a counter named it "C" to we will use in a cycle "For", with this cycle we can print in the console if the data that it's show us it's into the range [-1,1].

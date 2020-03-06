@@ -58,10 +58,53 @@ colnames(Games) <- Seasons
 rownames(Games) <- Players
 Games
 
+#Points
+KobeBryant_PTS <- c(2832,2430,2323,2201,1970,2078,1616,2133,83,782)
+JoeJohnson_PTS <- c(1653,1426,1779,1688,1619,1312,1129,1170,1245,1154)
+LeBronJames_PTS <- c(2478,2132,2250,2304,2258,2111,1683,2036,2089,1743)
+CarmeloAnthony_PTS <- c(2122,1881,1978,1504,1943,1970,1245,1920,2112,966)
+DwightHoward_PTS <- c(1292,1443,1695,1624,1503,1784,1113,1296,1297,646)
+ChrisBosh_PTS <- c(1572,1561,1496,1746,1678,1438,1025,1232,1281,928)
+ChrisPaul_PTS <- c(1258,1104,1684,1781,841,1268,1189,1186,1185,1564)
+KevinDurant_PTS <- c(903,903,1624,1871,2472,2161,1850,2280,2593,686)
+DerrickRose_PTS <- c(597,597,597,1361,1619,2026,852,0,159,904)
+DwayneWade_PTS <- c(2040,1397,1254,2386,2045,1941,1082,1463,1028,1331)
+#Code
+Points <- rbind(KobeBryant_PTS, JoeJohnson_PTS, LeBronJames_PTS, CarmeloAnthony_PTS, DwightHoward_PTS, ChrisBosh_PTS, ChrisPaul_PTS, KevinDurant_PTS, DerrickRose_PTS, DwayneWade_PTS)
+rm(KobeBryant_PTS, JoeJohnson_PTS, LeBronJames_PTS, CarmeloAnthony_PTS, DwightHoward_PTS, ChrisBosh_PTS, ChrisPaul_PTS, KevinDurant_PTS, DerrickRose_PTS, DwayneWade_PTS)
+colnames(Points) <- Seasons
+rownames(Points) <- Players
+Points
+
+#Field Goals
+KobeBryant_FG <- c(978,813,775,800,716,740,574,738,31,266)
+JoeJohnson_FG <- c(632,536,647,620,635,514,423,445,462,446)
+LeBronJames_FG <- c(875,772,794,789,768,758,621,765,767,624)
+CarmeloAnthony_FG <- c(756,691,728,535,688,684,441,669,743,358)
+DwightHoward_FG <- c(468,526,583,560,510,619,416,470,473,251)
+ChrisBosh_FG <- c(549,543,507,615,600,524,393,485,492,343)
+ChrisPaul_FG <- c(407,381,630,631,314,430,425,412,406,568)
+KevinDurant_FG <- c(306,306,587,661,794,711,643,731,849,238)
+DerrickRose_FG <- c(208,208,208,574,672,711,302,0,58,338)
+DwayneWade_FG <- c(699,472,439,854,719,692,416,569,415,509)
+#Matrix
+FieldGoals <- rbind(KobeBryant_FG, JoeJohnson_FG, LeBronJames_FG, CarmeloAnthony_FG, DwightHoward_FG, ChrisBosh_FG, ChrisPaul_FG, KevinDurant_FG, DerrickRose_FG, DwayneWade_FG)
+rm(KobeBryant_FG, JoeJohnson_FG, LeBronJames_FG, CarmeloAnthony_FG, DwightHoward_FG, ChrisBosh_FG, ChrisPaul_FG, KevinDurant_FG, DerrickRose_FG, DwayneWade_FG)
+colnames(FieldGoals) <- Seasons
+rownames(FieldGoals) <- Players
+
+#Free Throw Attempts per game
 ?matplot
 matplot(t(FreeThrows/Games), type ="b", pch=15:18, col=c(1:4, 6))
 legend("bottomleft", inset=0.01, legend=Players, col=c(1:4, 6), pch=15:18, horiz=F)
 
+#Accurancy of Free Throws
 ?matplot
 matplot(t(FreeThrows/FreeThrowsAttemps), type ="b", pch=15:18, col=c(1:4, 6))
+legend("bottomleft", inset=0.01, legend=Players, col=c(1:4, 6), pch=15:18, horiz=F)
+
+# Player playing style
+x <- Points-FreeThrows
+?matplot
+matplot(t(x/FieldGoals), type ="b", pch=15:18, col=c(1:4, 6))
 legend("bottomleft", inset=0.01, legend=Players, col=c(1:4, 6), pch=15:18, horiz=F)

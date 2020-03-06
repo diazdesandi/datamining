@@ -1,23 +1,18 @@
 # Unit 1
 ## Practice 1
 ```
-x <- seq(-20,20, by=1)
-y <- dnorm(x)
-plot(x,y)
-c <- 0
+x <- seq(-5,5,by=0.5)
+cont <- 0
 for(i in x)
 {
-    c <- c + 1
-    print(c)
-    if(i >= -1 && i <= 1)
-    {
-        print(i)
-        print("Se encuentra en [-1,1]")
-    }
-    else {
-        print(i)
-        print("Fuera del intervalo")
-    }
+  cont <- cont + 1
+  if(i >= -1 && i <= 1)
+  {
+    cat("Valor numero:", cont,"")
+    cat("Valor: ", i, " Se encuentra en [-1,1]")
+  }
+  else {
+  }
 }
 ```
 ## Practice 2

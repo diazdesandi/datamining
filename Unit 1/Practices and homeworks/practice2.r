@@ -1,16 +1,26 @@
+# csv read
 vivienda <- read.csv("C:/Users/rjds_/Downloads/TRVIVIENDA02.csv", header=FALSE)
+# Functions to get or set the names of an object.
 names(vivienda)
+# Returns the first or last parts of a vector, matrix, table, data frame or function.
 head(vivienda)
+# Categorical variables (factors) stored in R
 levels(vivienda$V5)
+# Number of rows
 nrow(vivienda)
+# Number of columns
 ncol(vivienda)
+# Sort a vector or factor into ascending or descending order. 
 sort(vivienda$V5)
+# Gets or sets the length of a vector (list) or other objects
 length(vivienda$V5)
+# Return the position of the elements in a logical vector which are TRUE
 which(vivienda$V5=='Tijuana')
 length(which(vivenda$V5=='Mexicali'))
+# Uses  the cross-classifying factors to build a contingency table of the counts at each combination of factor levels.
 table(vivenda$V5)
+# Calculate proportions over the entire table.
 prop.table(table(vivenda$V5))
-#Functions on R
 
 #cat convert the values into character values then combine those values and pint them
 cat('one',2,'three',4,'five')

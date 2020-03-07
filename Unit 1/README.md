@@ -17,6 +17,7 @@ for(i in x)
 }
 ```
 ## Practice 2
+This practice aims to use 20 R functions
 ```
 # csv read
 vivienda <- read.csv("C:/Users/rjds_/Downloads/TRVIVIENDA02.csv", header=FALSE)
@@ -132,6 +133,11 @@ worst.month
 M <- rbind(revenue.1000,expenses.1000,profit.1000,profit.after.tax.1000,profit.margin,good.months,bad.months,best.month,worst.month)
 ```
 ## Practice 4
+The objetive of this practice its to create three plots that portray the following insights from matrix data:
+* Free Throw Attempts per game
+* Accurancy of Free Throws
+* Player playing style (2 vs 3 points preference) excluding Free Throws
+
 ```
 #Seasons
 Seasons <- c("2005","2006","2007","2008","2009","2010","2011","2012","2013","2014")

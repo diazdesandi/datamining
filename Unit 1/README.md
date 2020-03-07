@@ -67,6 +67,7 @@ y <- c(2:7)
 union(x,y)
 ```
 ## Practice 3
+In practice 3, we did some operations between vectors with which we calculated several points, for example we calculated taxes, or expenses versus income, margins and learned to use many functions like round, which helps us round out according to decimals that we put on them, we calculate the average of both vectors.
 ```
 #Data
 revenue <- c(14574.49, 7606.46, 8611.41, 9175.41, 8058.65, 8105.44, 11496.28, 9766.09, 10305.32, 14379.96, 10713.97, 15433.50)
@@ -251,6 +252,7 @@ matplot(t(x/FieldGoals), type ="b", pch=15:18, col=c(1:4, 6))
 legend("bottomleft", inset=0.01, legend=Players, col=c(1:4, 6), pch=15:18, horiz=F)
 ```
 ## Practice 5
+In Practice 5, we learned how to use methods to run a .csv file, a dataframe with the we'll be able to work later, we learned how to filter information from a dataframe, by example in cases was to filter so that only the specific data of the column remained specified.
 ```
 ?read.csv()
 

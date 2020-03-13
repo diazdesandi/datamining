@@ -1,7 +1,7 @@
 # Unit 1
 ## Practice 1
 The aim of this practice is to make an R script to check the Law of Large Numbers
-```
+```r
 x <- seq(-5,5,by=0.5)
 cont <- 0
 for(i in x)
@@ -18,7 +18,7 @@ for(i in x)
 ```
 ## Practice 2
 This practice aims to use 20 R functions
-```
+```r
 # csv read
 vivienda <- read.csv("C:/Users/rjds_/Downloads/TRVIVIENDA02.csv", header=FALSE)
 # Functions to get or set the names of an object.
@@ -68,7 +68,7 @@ union(x,y)
 ```
 ## Practice 3
 In practice 3, we did some operations between vectors with which we calculated several points, for example we calculated taxes, or expenses versus income, margins and learned to use many functions like round, which helps us round out according to decimals that we put on them, we calculate the average of both vectors.
-```
+```r
 #Data
 revenue <- c(14574.49, 7606.46, 8611.41, 9175.41, 8058.65, 8105.44, 11496.28, 9766.09, 10305.32, 14379.96, 10713.97, 15433.50)
 expenses <- c(12051.82, 5695.07, 12319.20, 12089.72, 8658.57, 840.20, 3285.73, 5821.12, 6976.93, 16618.61, 10054.37, 3803.96)
@@ -139,7 +139,7 @@ The objetive of this practice its to create three plots that portray the followi
 * Accurancy of Free Throws
 * Player playing style (2 vs 3 points preference) excluding Free Throws
 
-```
+```r
 #Seasons
 Seasons <- c("2005","2006","2007","2008","2009","2010","2011","2012","2013","2014")
 
@@ -253,7 +253,7 @@ legend("bottomleft", inset=0.01, legend=Players, col=c(1:4, 6), pch=15:18, horiz
 ```
 ## Practice 5
 In Practice 5, we learned how to use methods to run a .csv file, a dataframe with the we'll be able to work later, we learned how to filter information from a dataframe, by example in cases was to filter so that only the specific data of the column remained specified.
-```
+```r
 ?read.csv()
 
 # Method 1: Select the file manually

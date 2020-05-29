@@ -27,4 +27,10 @@ plt  <- ggplot(workingdata, aes(x = Genre, y = Gross...US)) + labs(title = 'Dome
 #Final plot
 fnlplt <- plt + geom_jitter(aes(size = Budget...mill., color = Studio)) + geom_boxplot(alpha = 0.4, outlier.color = NA)
 fnlplt$labels$size <- 'Budget $M'
+
+fnlplt
+
+#Theme
+fnlplt <- fnlplt + theme(axis.title.x = element_text(color = "blue", size = "22"), axis.title.y = element_text(color = "blue", size = "22"), plot.title = element_text(color = "black", size = "26",hjust = 0.5), legend.title = element_text(color = "black", size = "14"), text = element_text(family = "Comic Sans MS"))
+
 fnlplt

@@ -11,7 +11,9 @@ wdata <- as.data.frame(projectcsv)
 genres <- c('action', 'adventure','animation','comedy','drama')
 studios <- c('Buena Vista Studios','Fox','Paramount Pictures','Sony','Universal','WB')
 
+# Libraries 
 library('dplyr')
+library('ggplot2')
 
 # Filtering
 workingdata <- filter(wdata,Genre %in% genres, Studio %in% studios)
@@ -19,14 +21,10 @@ workingdata <- filter(wdata,Genre %in% genres, Studio %in% studios)
 # Check
 summary(workingdata)
 
-library('ggplot2')
-
 # Create plot
-bxplt  <- ggplot(workingdata, aes(x = Genre, y = Gross...US)) + labs(title = 'Domestic Gross % By Genre', x = "Genre", y = "Gross % US")
+plt  <- ggplot(workingdata, aes(x = Genre, y = Gross...US)) + labs(title = 'Domestic Gross % By Genre', x = "Genre", y = "Gross % US")
 
-# Boxplot
-bxplt + geom_boxplot()
-
-
-
-
+#Final plot
+fnlplt <- plt + geom_jitter(aes(size = Budget...mill., color = Studio)) + geom_boxplot(alpha = 0.4, outlier.color = NA)
+fnlplt$labels$size <- 'Budget $M'
+fnlplt

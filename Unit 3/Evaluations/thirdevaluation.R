@@ -34,10 +34,10 @@ model <- naiveBayes(as.factor(Purchased)~., data = socialnwrk)
 model
 
 # Prediction 
-pred <- predict(model,testdata)
+pred <- predict(model,testData)
 
 # Table 
-tab <- table(testdata$Purchased, pred, dnn = c("Actual", "Predicha"))
+tab <- table(testData$Purchased, pred, dnn = c("Actual", "Predicha"))
 
 # Final Matrix
 confusionMatrix(tab)

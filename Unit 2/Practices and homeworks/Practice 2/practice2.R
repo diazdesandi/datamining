@@ -1,6 +1,6 @@
 # Green House Gases Mexico By Sectors (1990-2010)
 
-gases <- read.csv("C:/Users/rjds_/Desktop/GHG-Mexico-1990-2010.csv")
+gases <- read.csv("C:/Users/rjds_/Desktop/Data Mining/Unit 2/Practices and homeworks/Practice 2/GHG-Mexico-1990-2010.csv")
 
 gases$Sector = factor(gases$Sector,
                       levels = c('Energy','Industrial processes','Agricuture','Silviculture','Waste management'),
@@ -36,35 +36,17 @@ summary(regressor)
 y_pred = predict(regressor, newdata = testData)
 y_pred
 
+# year and chem?
+# regressor = lm(formula = Year + GHG + Sector + Amount, data = gasesfilter )
+# summary(regressor)
+# 
+# regressor = lm(formula = Year + GHG + Sector, data = gasesfilter )
+# summary(regressor)
+# 
+# regressor = lm(formula = Year + GHG, data = gasesfilter )
+# summary(regressor)
 
-# Building the optimal model using Backward Elimination
-regressor = lm(formula = Year + GHG + Sector + Amount, data = gasesfilter )
-summary(regressor)
-
-regressor = lm(formula = Year + GHG + Sector, data = gasesfilter )
-summary(regressor)
-
-regressor = lm(formula = Year + GHG, data = gasesfilter )
-summary(regressor)
-
+# test predict
+regressor = lm(formula = Amount ~ Sector + GHG)
 y_pred = predict(regressor, newdata = testData)
-y_pred
-
-
-backwardElimination <- function(x, sl) {
-  numVars = length(x)
-  for (i in c(1:numVars)){
-    regressor = lm(formula = Profit ~ ., data = x)
-    maxVar = max(coef(summary(regressor))[c(2:numVars), "Pr(>|t|)"])
-    if (maxVar > sl){
-      j = which(coef(summary(regressor))[c(2:numVars), "Pr(>|t|)"] == maxVar)
-      x = x[, -j]
-    }
-    numVars = numVars - 1
-  }
-  return(summary(regressor))
-}
-
-#SL = 0.05
-#trainData
-#backwardElimination(trainData, SL)
+y_pred???

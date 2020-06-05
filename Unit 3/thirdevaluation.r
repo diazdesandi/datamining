@@ -26,7 +26,7 @@ rm(socialnetwork)
 #complete.cases(socialnwrk)
 
 # Data split
-split = sample.split(socialnwrk$Purchased, SplitRatio = 0.7)
+split = sample.split(socialnwrk$Purchased, SplitRatio = 0.6)
 
 # Training Data
 traindata = subset(socialnwrk, split == TRUE)
@@ -36,21 +36,20 @@ testdata = subset(socialnwrk, split == FALSE)
 rm(split)
 
 # Scaling
-traindata[-2] = scale(traindata[-2])
-testdata[-2] = scale(testdata[-2])
+traindata[-3] = scale(traindata[-3])
+testdata[-3] = scale(testdata[-3])
 
 # Naive Bayes Model
-nbmodel <- naiveBayes(Purchased ~ Age, data = socialnwrk)
-
+nbmodel <- naiveBayes(x = traindata[,-3], y = traindata$Purchased, SplitRatio = 0.60)
 # Check
 nbmodel
 
 # Prediction
 library('caret')
-pred <- predict(nbmodel,testdata)
+pred <- predict(nbmodel,testdata[,-3])
 
 # Table 
-tab <- table(testdata$Purchased, pred, dnn = c("Actual", "Predicha"))
+tab <- table(testdata[,3], pred, dnn = c("Actual", "Predicha"))
 
 # Final Matrix
 confusionMatrix(tab)
@@ -58,12 +57,12 @@ confusionMatrix(tab)
 # Visualizing the Training set results
 library(ElemStatLearn)
 set = traindata
-X1 = seq(min(set[, 1]) - 0.5, max(set[, 1]) + 0.5)
-X2 = seq(min(set[, 2]) - 0.5, max(set[, 2]) + 0.5)
+X1 = seq(min(set[, 1]) - 0.5, max(set[, 1]) + 0.5, by = 0.01)
+X2 = seq(min(set[, 2]) - 0.5, max(set[, 2]) + 0.5, by = 0.01)
 grid_set = expand.grid(X1, X2)
 colnames(grid_set) = c('Age', 'EstimatedSalary')
 y_grid = predict(nbmodel, newdata = grid_set,)
-plot(set[, -2],
+plot(set[, -3],
      main = 'Naive Bayes (Training set)',
      xlab = 'Age', ylab = 'Estimated Salary',
      xlim = range(X1), ylim = range(X2))
@@ -74,8 +73,8 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 # Visualizing the Test set results
 library(ElemStatLearn)
 set = testdata
-X1 = seq(min(set[, 1]) - 0.5, max(set[, 1]) + 0.5)
-X2 = seq(min(set[, 2]) - 0.5, max(set[, 2]) + 0.5)
+X1 = seq(min(set[, 1]) - 0.5, max(set[, 1]) + 0.5, by = 0.01)
+X2 = seq(min(set[, 2]) - 0.5, max(set[, 2]) + 0.5, by = 0.01)
 grid_set = expand.grid(X1, X2)
 colnames(grid_set) = c('Age', 'EstimatedSalary')
 y_grid = predict(nbmodel, newdata = grid_set)

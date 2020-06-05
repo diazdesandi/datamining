@@ -49,4 +49,4 @@ y_pred
 # test predict
 regressor = lm(formula = Amount ~ Sector + GHG)
 y_pred = predict(regressor, newdata = testData)
-y_pred???
+y_pred

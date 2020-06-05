@@ -77,3 +77,6 @@ contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
 points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ```
+
+### Graph
+![](https://github.com/diazdesandi/datamining/blob/Unit-2/Unit%202/Practices%20and%20homeworks/Practice%205/plototo.png)

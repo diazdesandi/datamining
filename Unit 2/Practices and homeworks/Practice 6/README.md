@@ -67,3 +67,6 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 plot(classifier)
 text(classifier, cex=0.6)
 ```
+
+### Graph
+![](https://github.com/diazdesandi/datamining/blob/Unit-2/Unit%202/Practices%20and%20homeworks/Practice%206/tree.png)

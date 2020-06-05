@@ -1,4 +1,5 @@
 # Practice 1
+The objective of this practice is to develop the use of simple linear regression with a new dataset
 
 ```r
 #import CSV-salary

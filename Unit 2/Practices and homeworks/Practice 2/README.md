@@ -1,5 +1,9 @@
+# Practice 2
+The objective of this practice is to apply the multiple regression model
+CSV from https://www.kaggle.com/ireneeliu/green-house-gases-mexico-by-sectors-19902010
+
+```r
 # Green House Gases Mexico By Sectors (1990-2010)
-# CSV from https://www.kaggle.com/ireneeliu/green-house-gases-mexico-by-sectors-19902010
 gases <- read.csv("C:/Users/rjds_/Desktop/Data Mining/Unit 2/Practices and homeworks/Practice 2/GHG-Mexico-1990-2010.csv")
 
 # We assign a number to each sector
@@ -43,3 +47,4 @@ y_pred
 regressor = lm(formula = Amount ~ Sector + GHG)
 y_pred = predict(regressor, newdata = testData)
 y_pred
+```

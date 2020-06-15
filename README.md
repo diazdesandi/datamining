@@ -1,15 +1,20 @@
-# datamining
+# Third evaluation
+###Code
 
+```r
 //we import libraries to be able to use naive bayes and to be able to graph
 the data
 library(&#39;e1071&#39;)
 library(&#39;ggplot2&#39;) #necessary for caret
 library(&#39;lattice&#39;) #necessary for caret
 library(&#39;caTools&#39;)
+```r
 //import and read the csv Social_Network_Ads.csv
 socialnetwork &lt;- read.csv(&quot;C:/Users/rjds_/Desktop/Social_Network_Ads.csv&quot;)
+```
 //we place the seed, it helps us to reproduce any result that is random
 set.seed(4)
+```r
 //we only import columns 3,4,5 since we don't need all the csv information
 to be able to perform the naive bayes, since the other columns are not numerical values ​​and
 would produce a problem

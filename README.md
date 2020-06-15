@@ -44,27 +44,38 @@ traindata = subset(socialnwrk, split == TRUE)
 testdata = subset(socialnwrk, split == FALSE)
 //We remove the data division.
 rm(split)
+```
 //we scale the data because otherwise it generates an error to use the generated data
 around 200gb.
+```r
 traindata[-3] = scale(traindata[-3])
 testdata[-3] = scale(testdata[-3])
 # Naive Bayes Model
+```
 //we proceed to perform the naive bayes algorithm with the dependent variables
+```r
 nbmodel &lt;- naiveBayes(x = traindata[,-3], y = traindata$Purchased, SplitRatio = 0.60)
-
+```
 # Check
 nbmodel
 //Prediction with the caret library
+```r
 library(&#39;caret&#39;)
 pred &lt;- predict(nbmodel,testdata[,-3])
 # Table
+```
 //with this table we predict the data
+```r
 tab &lt;- table(testdata[,3], pred, dnn = c(&quot;Actual&quot;, &quot;Predicha&quot;))
+```
 # Final Matrix
 //confusion matrix to review the level of pressure.
+```r
 confusionMatrix(tab)
+```
 # Visualizing the Training set results
 //Graphic visualization
+```r
 library(ElemStatLearn)
 set = traindata
 X1 = seq(min(set[, 1]) - 0.5, max(set[, 1]) + 0.5, by = 0.01)

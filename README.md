@@ -1,5 +1,5 @@
 # datamining
- 
+
 //we import libraries to be able to use naive bayes and to be able to graph
 the data
 library(&#39;e1071&#39;)

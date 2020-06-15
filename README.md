@@ -1,33 +1,43 @@
 # Third evaluation
 ###Code
-```
+
 //we import libraries to be able to use naive bayes and to be able to graph
 the data
-```
+```r
 library(&#39;e1071&#39;)
 library(&#39;ggplot2&#39;) #necessary for caret
 library(&#39;lattice&#39;) #necessary for caret
 library(&#39;caTools&#39;)
-```r
+```
 //import and read the csv Social_Network_Ads.csv
+```
 socialnetwork &lt;- read.csv(&quot;C:/Users/rjds_/Desktop/Social_Network_Ads.csv&quot;)
 ```
 //we place the seed, it helps us to reproduce any result that is random
+```
 set.seed(4)
-```r
+```
 //we only import columns 3,4,5 since we don't need all the csv information
 to be able to perform the naive bayes, since the other columns are not numerical values ​​and
 would produce a problem
+```
 socialnwrk &lt;- socialnetwork[3:5]
+```r
+```
 //We create the dataframe of the purchased column and they are values ​​only 0 and 1 indicating if
 I buy or not
+```
 socialnwrk$Purchased = factor(socialnwrk$Purchased, levels = c(0,1))
+```
 //We removed the original csv to lighten the workspace
+```r
 rm(socialnetwork)
 # Check all True
 #complete.cases(socialnwrk)
+```
 //We made a division of the dataframe, assigning 60% of the information will be data from
 training and 40% will test them
+```r
 split = sample.split(socialnwrk$Purchased, SplitRatio = 0.6)
 # Training Data
 traindata = subset(socialnwrk, split == TRUE)

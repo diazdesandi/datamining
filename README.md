@@ -1,9 +1,8 @@
 # Third evaluation
 ###Code
-
-```r
 //we import libraries to be able to use naive bayes and to be able to graph
 the data
+```r
 library(&#39;e1071&#39;)
 library(&#39;ggplot2&#39;) #necessary for caret
 library(&#39;lattice&#39;) #necessary for caret

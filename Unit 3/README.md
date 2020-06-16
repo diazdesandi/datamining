@@ -1,7 +1,5 @@
 # Third evaluation
-###Code
-
-//we import libraries to be able to use naive bayes and to be able to graph
+We import libraries to be able to use naive bayes and to be able to graph
 the data
 ```r
 library(&#39;e1071&#39;)
